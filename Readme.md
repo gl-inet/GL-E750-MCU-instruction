@@ -1,5 +1,6 @@
 **Since the microcontroller only recognizes the string type in the JSON format, the following parameters, even if the parameter type is INT, will be converted to a string and sent**
-###WIFI Related
+
+### WIFI Related
 
 | Parameter name | Type | Necessity | Default | Description                                            | Possible value                                |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
@@ -11,7 +12,7 @@
 |key_5g|string|no|" "|5G WiFi password, if it is empty, it means no encryption, LCD shows OPEN|A string of up to 64 characters|
 |hide_psk|string|no|"0"|Whether to hide the wifi password on the LCD|0 or 1|
 
-###Modem related
+### Modem related
 
 | Parameter name |  Type  | Necessity | Default  | Description                                                  | Possible value                                               |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
@@ -22,7 +23,7 @@
 |modem_mode|string|no|" "|Network mode|2G，3G, 4G, 4G+|
 |modem_up|string|no|"0"|Whether the modem data is enabled|0 or 1|
 
-###Network Related
+### Network Related
 
 | Parameter name |  Type  | Necessity | Default | Description                                                  | Possible value                                               |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
@@ -30,7 +31,7 @@
 |lan_ip|string|yes|" "| Router gateway address, or the IP address of the router under bridge mode |Legal IP address|
 |method_nw|string|yes|" "|Router's current Internet access| cable,repeater,modem,tethering, if there is extra information, use "\|" to separate them. For example, repeater&#124;GL-AR750S-081 |
 
-###VPN related
+### VPN related
 
 | Parameter name |  Type  | Necessity | Default | Description            | Possible value                   |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
@@ -38,13 +39,13 @@
 |vpn_status|string|yes|" "|VPN connection status|connected，connecting，off|
 |vpn_server|string|yes|" "|VPN configuration name|A string of up to 128 characters|
 
-###Client related
+### Client related
 
 | Parameter name |  Type  | Necessity | Default | Description       | Possible value                     |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
 |clients|string|yes|"0"|Number of clients|Numbers greater than or equal to 0|
 
-###customization related
+### customization related
 
 | Parameter name |  Type  | Necessity | Default | Description                                                  | Possible value                  |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
@@ -53,7 +54,7 @@
 | content | string| no |" "| Display content | A string of up to 64 characters |
 |msg|string|no|" "|Display content on the screen for 20 seconds|A string of up to 64 characters|
 
-###system related
+### system related
 
 | Parameter name |  Type  | Necessity | Default | Description                                   | Possible value                                               |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
@@ -63,19 +64,19 @@
 |tor|string|no|"0"|Is it the Tor firmware|0 or 1|
 |debug|string|no|"0"|Whether to print debug information in logread|0 or 1|
 
-###MCU status related
+### MCU status related
 
 | Parameter name |  Type  | Necessity | Default | Description                                                  | Possible value |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
 |mcu_status|string|no|NO|Get the status of the microcomputer, send the command within 1 second, the microcomputer will return the relevant data through the serial port, which are the percentage of power, the temperature of the coulometer, the state of charge, the number of battery charging cycles, and the battery voltage|  |
 
-###screen test
+### screen test
 
 | Parameter name |  Type  | Necessity | Default | Description                    | Possible value                            |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
 |lcd_test|string|no|NO|Test the screen for bad pixels|1 (light up all pixels) or 0 (off screen)|
 
-###coulometer parameter query
+### coulometer parameter query
 
 | Parameter name |  Type  | Necessity | Default | Description                                            | Possible value |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
@@ -83,13 +84,13 @@
 |chemid|string|no|NO| Check coulometer file version                          ||
 |high_temp|string|no|72| Set high temperature shutdown value, don't set too low ||
 
-###MCU firmware version query
+### MCU firmware version query
 
 | Parameter name |  Type  | Necessity | Default | Description                | Possible value |
 | :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
 |version|string|no|NO| Check MCU firmware version ||
 
-###Application example
+### Application example
 **Use the echo command directly to send data in json format to the system serial port. This example contains basic WIFI information, SIM card information, VPN status, client status, time, etc. The MCU_status parameter is included in the example, which indicates that the microcontroller is required to return status**
 
 ```
