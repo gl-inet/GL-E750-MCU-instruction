@@ -104,8 +104,8 @@ echo '{ "ssid_5g": "GL-E750-719", "up_5g": "1", "key_5g": "goodlife", "ssid": "G
 ### Compile .ipk
 #### 1. Compile on the glinet openwrt source
 	$cd openwrt_root          #go to your openwrt source root
-	$./scripts/feeds update -a
-	$./scripts/feeds install -a
+	$./scripts/feeds update -f -a
+	$./scripts/feeds install -f -a
 	$make menuconfig
 	  GL.iNet packages choice shortcut  ---> 
 	    Select MCU  --->
