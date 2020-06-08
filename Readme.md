@@ -101,3 +101,25 @@ echo '{ "ssid_5g": "GL-E750-719", "up_5g": "1", "key_5g": "goodlife", "ssid": "G
 ```
 {OK},99,42.4,1,2
 ```
+### Compile .ipk
+#### 1. Compile on the glinet openwrt source
+	$cd openwrt_root          #go to your openwrt source root
+	$./scripts/feeds update -a
+	$./scripts/feeds install -a
+	$make menuconfig
+	  GL.iNet packages choice shortcut  ---> 
+	    Select MCU  --->
+	      <*> Support GL_E750_MCU
+	$make package/feeds/gli_pub/gl-e750-mcu/{clean,compile} V=s
+	$ls bin/packages/mips_24kc/gli_pub/gl-e750-mcu_2020-06-08-f8c77bdb-1_mips_24kc.ipk
+  
+#### 2. Compile on the other openwrt source
+	$cd openwrt_root          #go to your openwrt source root
+	$cd package
+	$git clone https://github.com/gl-inet/GL-E750-MCU-instruction.git
+	$cd ..
+	$make menuconfig
+	  gl-inet  ---> 
+	    <*> gl-e750-mcu........................................ GL iNet mcu interface
+	$make package/GL-E750-MCU-instruction/{clean,compile} V=s
+	$ls bin/packages/mips_24kc/base/gl-e750-mcu_2020-06-08-f8c77bdb-1_mips_24kc.ipk
