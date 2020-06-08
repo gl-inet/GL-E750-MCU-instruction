@@ -1,0 +1,10 @@
+#!/bin/sh /etc/rc.common
+
+STOP=8
+
+stop() {
+        echo {\"system\":\"reboot\"} >/tmp/mcu_message
+        killall -17 e750-mcu
+        sleep 1
+}
+

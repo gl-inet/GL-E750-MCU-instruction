@@ -1,0 +1,10 @@
+#!/bin/sh
+
+TIMESTEP="/var/state/time_step"
+
+[ "$ACTION" = step ] || exit 0
+
+[ -f "$TIMESTEP" ] || {
+        echo "ntpd says time is step" >$TIMESTEP
+
+}

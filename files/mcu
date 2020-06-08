@@ -1,0 +1,4 @@
+config global 'global'
+	option custom_en '0'
+	option debug '0'
+

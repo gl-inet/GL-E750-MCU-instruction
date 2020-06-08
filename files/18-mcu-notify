@@ -1,0 +1,6 @@
+[ "$board" != "GL-E750" ] && exit 0
+#[ "$INTERFACE" = "modem_1_1_2" -o "$INTERFACE" = "ovpn"  -o "$DEVICE" = "wg0"  ] || exit 0
+[ "$ACTION" = "ifdown" -o "$ACTION" = "ifup"  ] && {
+	killall -16 e750-mcu
+}
+
