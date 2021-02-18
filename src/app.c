@@ -39,7 +39,7 @@ static pthread_t try;
 static pthread_mutex_t mutex;
 static int tty_fd=-1;
 static int debug=0;
-static noupdate_c=0;
+static int noupdate_c=0;
 
 
 
@@ -590,7 +590,7 @@ static int uart_write_read(char *buf,int len,int timeout)
 	return ret;
 }
 
-static int mcu_set_config(int num)
+static void mcu_set_config(int num)
 {
 	struct uci_context* ctx = guci2_init();
 	char content[65]={0}, display_mask[10]={0},custom_en[10]={0},uci_debug[10]={0};
@@ -644,7 +644,6 @@ static int mcu_set_config(int num)
 	
 	
 	guci2_free(ctx);
-	return 0;
 }
 
 static void event_sig_handler(int num)

@@ -7,7 +7,7 @@ extern "C" {
 
 /** This is a modification from guci.h to 
  * change the global variables to local
- * /
+ */
 
 /**
  * Init and free guci context

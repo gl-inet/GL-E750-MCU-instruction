@@ -4,24 +4,24 @@
 #include <gl/debug.h>
 #include <json-c/json.h>
 #include <gl/gjson.h>
+#include <gl/guci2.h>
+#include <gl/shell.h>
 
 int mcu_get_data(json_object * input, json_object * output)
 {
     FILE *stream;
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
-	double temp=0;
-	float decimal=0.0;
-	int percent=0;
-	int charging=0;
-	int c_count=0;
-	json_object *obj=NULL;	
+    double temp=0;
+    int percent=0;
+    int charging=0;
+    int c_count=0;
+    json_object *obj=NULL;	
 
     stream = fopen("/tmp/mcu_data", "r");
     if (stream == NULL)
         return 0;
-	fseek(stream,0,SEEK_SET);
+    fseek(stream,0,SEEK_SET);
     if(getline(&line, &len, stream) == -1)
 		return 0;
 
@@ -138,7 +138,7 @@ int mcu_set_config(json_object * input, json_object * output)
 	bool screen4_en = gjson_get_boolean(input, "screen4_en");
 	bool screen5_en = gjson_get_boolean(input, "screen5_en");
 	bool custom_en = gjson_get_boolean(input,"custom_en");
-	char *content = gjson_get_string(input,"content");
+	const char *content = gjson_get_string(input,"content");
 
 	struct uci_context* ctx = guci2_init();
 	if(hide_psk){

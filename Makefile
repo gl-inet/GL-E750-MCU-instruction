@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gl-e750-mcu
-PKG_VERSION:=3.0.49
+PKG_VERSION:=3.0.50
 PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/package.mk

@@ -39,6 +39,7 @@ extern int execCommand(const char *command);
 extern int getProcessRunStatus(char *process);
 extern int getProcessRunStatus2(char *proc_name, char *proc_cmd);
 extern int wait_process_running(int timeout, char *process);
+extern bool check_process_running(const char *process);
 
 
 #ifdef __cplusplus
