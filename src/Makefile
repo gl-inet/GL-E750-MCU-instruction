@@ -1,4 +1,4 @@
-LDFLAGS += libglmodem-util.a libglsdk.a -L/usr/lib/ -ljson-c -luci -lubox -lubus -ldl -lpthread  -L/usr/lib/lua/ -liwinfo -luuid  -lblobmsg_json libglmodem-util.a -lcurl
+LDFLAGS += libglmodem-util.a libglsdk.a -L/usr/lib/ -ljson-c -luci -lubox -lubus -ldl -lpthread  -L/usr/lib/lua/ -liwinfo -luuid  -lblobmsg_json libglmodem-util.a -lcurl -I include
 
 all : e750-mcu mcu_update libraries
 
