@@ -145,4 +145,4 @@ If you want to check the MCU firmware version, please following these steps.
 
 3. Open the first terminal useing SSH protocol, execute the ***ubus  call  service delete '{"name":"e750_mcu"}'*** command to stop the mcu process, don't care the rerurn message
 
-4. Execute the ***mcu_update /tmp/e750-mcu-V1.0.5.bin*** command to stop the mcu process
+4. Execute the ***mcu_update /tmp/e750-mcu-V1.0.5.bin*** command to upgrade the MCU firmware
