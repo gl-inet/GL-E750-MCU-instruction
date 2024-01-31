@@ -132,6 +132,7 @@ If you want to check the MCU firmware version, please following these steps.
 	$cd package
 	$git clone https://github.com/gl-inet/GL-E750-MCU-instruction.git
 	$cd ..
+	$./scripts/feeds update && ./scripts/feeds install libcurl
 	$make menuconfig
 	  gl-inet  ---> 
 	    <*> gl-e750-mcu........................................ GL iNet mcu interface
