@@ -103,7 +103,7 @@ echo '{ "ssid_5g": "GL-E750-719", "up_5g": "1", "key_5g": "goodlife", "ssid": "G
 ```
 ### example2: How to check the information
 If you want to check the MCU firmware version, please following these steps.
-1. Open the first terminal useing SSH protocol
+1. Open the first terminal using SSH protocol
 
 2. In the terminal, execute the ***uci set mcu.global.debug=1 && uci commit*** command to open the debug mode
 
@@ -111,7 +111,7 @@ If you want to check the MCU firmware version, please following these steps.
 
 4. Execute the ***logread -f*** command to monitor the system log
 
-5. Open the second terminal useing SSH protocol, and then execute the ***echo {\\"version\\": \\"1\\"} >  /tmp/mcu_message  &&  killall -17 e750-mcu*** command
+5. Open the second terminal using SSH protocol, and then execute the ***echo {\\"version\\": \\"1\\"} >  /tmp/mcu_message  &&  killall -17 e750-mcu*** command
 
 6. In the first terminal, you will see the **e750-mcu recived:xxx** message
 
@@ -139,10 +139,10 @@ If you want to check the MCU firmware version, please following these steps.
 	$ls bin/packages/mips_24kc/base/gl-e750-mcu_2020-06-08-f8c77bdb-1_mips_24kc.ipk
 
 ### How to upgrade the mcu firmware
-1. Get the mcu firmware from GL sales or compile the firmware by youself use the source code
+1. Get the mcu firmware from GL sales or compile the firmware by yourself use the source code
 
 2. Use the TFTP or SCP protocol to upload the MCU firmware to a directory on E750 file system. For example, my firmware name is **e750-mcu-V1.0.5.bin** and I chose the directory is **/tmp**, so the firmware path is **/tmp/e750-mcu-V1.0.5.bin**
 
-3. Open the first terminal useing SSH protocol, execute the ***ubus  call  service delete '{"name":"e750_mcu"}'*** command to stop the mcu process, don't care the rerurn message
+3. Open the first terminal using SSH protocol, execute the ***ubus  call  service delete '{"name":"e750_mcu"}'*** command to stop the mcu process, don't care the return message
 
 4. Execute the ***mcu_update /tmp/e750-mcu-V1.0.5.bin*** command to upgrade the MCU firmware
